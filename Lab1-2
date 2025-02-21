@@ -7,7 +7,7 @@ app = Flask(__name__) # setup initial flask app; gets called throughout in route
 #change to run
 conn_params = {
         "host":"34.134.200.167",
-        "database": "D:\Andrew_MGIS\GIS5572\PostgreSQL-34-lab0(postgres).sde",
+        "database": "lab0",
         "user":"postgres",
         "password":"Flyers7475!7475!",
         "port": "5432"
@@ -27,7 +27,7 @@ def get_polygon():
                 'geometry', ST_AsGeoJSON(geom)::jsonb,
                 'properties', jsonb_build_object('id',id)
             )
-            FROM polygon
+            FROM lab0.postgres.polygon_fc
             LIMIT 1;
         """
 
