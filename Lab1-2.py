@@ -25,7 +25,7 @@ def get_polygon():
             SELECT jsonb_build_object(
                 'type', 'feature',
                 'geometry', ST_AsGeoJSON(shape)::jsonb,
-                'properties', jsonb_build_object('objectid',id)
+                'properties', jsonb_build_object(objectid)
             )
             FROM lab0.postgres.polygon_fc
             LIMIT 1;
