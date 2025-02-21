@@ -23,7 +23,7 @@ def get_polygon():
 
         query = """
             SELECT jsonb_build_object(
-                'type', 'feature',
+                'type', 'Feature',
                 'geometry', ST_AsGeoJSON(shape)::jsonb,
                 'properties', jsonb_build_object('objectid', objectid)
             )
