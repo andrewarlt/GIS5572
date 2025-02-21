@@ -24,7 +24,7 @@ def get_polygon():
         query = """
             SELECT jsonb_build_object(
                 'type', 'feature',
-                'geometry', ST_AsGeoJSON(geom)::jsonb,
+                'geometry', ST_AsGeoJSON(shape)::jsonb,
                 'properties', jsonb_build_object('id',id)
             )
             FROM lab0.postgres.polygon_fc
